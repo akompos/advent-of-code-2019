@@ -1,4 +1,3 @@
-import argparse
 import pytest
 from typing import List
 
@@ -38,11 +37,8 @@ def test(input_l: List[int], expected: int) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument('data_file')
-    args = parser.parse_args()
 
-    with open(args.data_file) as f:
+    with open('inputs/aoc-2.txt', 'r') as f:
         print(compute(f.read()))
 
     return 0
