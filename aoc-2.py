@@ -2,7 +2,6 @@ import pytest
 from typing import List
 
 
-
 def compute_not_broken(prog: List[int]) -> int:
     pc = 0
     while True:
@@ -25,6 +24,7 @@ def compute(s: str) -> int:
     prog[2] = 2
     return compute_not_broken(prog)
 
+
 @pytest.mark.parametrize(
     ('input_l', 'expected'),
     (
@@ -35,7 +35,6 @@ def test(input_l: List[int], expected: int) -> None:
     assert compute_not_broken(input_l, ) == expected
 
 
-
 def main() -> int:
 
     with open('inputs/aoc-2.txt', 'r') as f:
@@ -43,5 +42,7 @@ def main() -> int:
 
     return 0
 
+
 if __name__ == '__main__':
+
     exit(main())
