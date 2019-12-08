@@ -2,10 +2,10 @@ import typing
 
 
 def compute(s: str) -> int:
-    beg_s, end_s = s.strip().split('-')
-    beg, end = int(beg_s), int(end_s)
-    n = 0
-    for i in range(beg, end):
+    min, max = s.strip().split('-')
+    min, max = int(min), int(max)
+    combinations = 0
+    for i in range(min, max):
         str_i = str(i)
         if len(str_i) != 6:
             continue
@@ -23,9 +23,9 @@ def compute(s: str) -> int:
         if not adjacent_same:
             continue
 
-        n += 1
+        combinations += 1
 
-    return n
+    return combinations
 
 
 def main() -> int:
